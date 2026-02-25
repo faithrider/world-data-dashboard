@@ -211,13 +211,13 @@ function drawPovertyChart(data, povertyLine) {
         .attr('y', d => y(d.length))
         .attr('width', d => x(d.x1) - x(d.x0) - 1)
         .attr('height', d => y(0) - y(d.length))
-        .attr('fill', '#FF9900')
+        .attr('fill', '#4682B4')
         .on('mouseover', function(event, d) {
             tooltip.style('display', 'block')
                 .html(`<strong>${d.length} countries</strong><br>${povertyLine}: ${d.x0.toFixed(2)}% - ${d.x1.toFixed(2)}%`)
                 .style('left', (event.pageX + 10) + 'px')
                 .style('top', (event.pageY - 28) + 'px');
-            d3.select(this).attr('fill', '#2a4d6b');
+            d3.select(this).attr('fill', '#2a4d6b'); // keep hover a darker blue
         })
         .on('mousemove', function(event) {
             tooltip.style('left', (event.pageX + 10) + 'px')
@@ -225,7 +225,7 @@ function drawPovertyChart(data, povertyLine) {
         })
         .on('mouseout', function() {
             tooltip.style('display', 'none');
-            d3.select(this).attr('fill', '#4682B4');
+            d3.select(this).attr('fill', '#4682B4'); // revert to blue on mouseout
         });
 
     // X axis
@@ -306,13 +306,13 @@ function drawLifeChart(data) {
         .attr('y', d => y(d.length))
         .attr('width', d => x(d.x1) - x(d.x0) - 1)
         .attr('height', d => y(0) - y(d.length))
-        .attr('fill', '#FFBC7A')
+        .attr('fill', '#6baed6')
         .on('mouseover', function(event, d) {
             tooltip.style('display', 'block')
                 .html(`<strong>${d.length} countries</strong><br>Life Expectancy: ${d.x0.toFixed(2)} - ${d.x1.toFixed(2)}`)
                 .style('left', (event.pageX + 10) + 'px')
                 .style('top', (event.pageY - 28) + 'px');
-            d3.select(this).attr('fill', '#2171b5');
+            d3.select(this).attr('fill', '#2171b5'); // keep hover a darker blue
         })
         .on('mousemove', function(event) {
             tooltip.style('left', (event.pageX + 10) + 'px')
@@ -320,7 +320,7 @@ function drawLifeChart(data) {
         })
         .on('mouseout', function() {
             tooltip.style('display', 'none');
-            d3.select(this).attr('fill', '#6baed6');
+            d3.select(this).attr('fill', '#6baed6'); // revert to blue on mouseout
         });
 
     // X axis

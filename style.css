@@ -1,10 +1,12 @@
 /* Make all links powder orange for visibility */
 a, a:visited {
-    color: #FFBC7A; !important;
+    color: #FFBC7A !important;
     text-decoration: underline;
     transition: color 0.2s;
 }
-a:hover, a:active {
+
+/* Strongest specificity for link hover color, placed at end of file */
+a:hover, a:active, .dashboard a:hover, .dashboard a:active, .viz-container a:hover, .viz-container a:active {
     color: #FF9900 !important;
 }
 
@@ -61,9 +63,18 @@ h2 {
 .map-chart {
     height: 600px;
 }
+h2 {
+    font-size: 1.2em;
+    margin-top: 0;
+}
 svg {
     width: 100%;
     height: 300px;
+}
+
+/* Strongest specificity for link hover color, placed at end of file */
+a:hover, a:active, .dashboard a:hover, .dashboard a:active, .viz-container a:hover, .viz-container a:active {
+    color: #FF9900 !important;
 }
 h2 {
     font-size: 1.2em;
