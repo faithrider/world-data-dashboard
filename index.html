@@ -11,17 +11,25 @@
     <header>
         <h1>World Data Dashboard: Poverty & Life Expectancy</h1>
         <p>By Faith Rider</p>
-        <p>Data source: <a href="https://ourworldindata.org/" target="_blank">Our World in Data</a> (2023)</p>
+        <p>Data source: <a href="https://ourworldindata.org/" target="_blank">Our World in Data</a></p>
+        <p>Specfiic datasets: <a href="https://ourworldindata.org/grapher/income-share-distribution-before-tax-wid" target="_blank">Income Distribution</a> and <a href="https://ourworldindata.org/grapher/life-expectancy" target="_blank">Life Expectancy</a></p>
     </header>
     <main>
-        <div class="controls" style="text-align:center; margin-top:1em;">
-            <label for="poverty-line-select"><strong>Select Poverty Line:</strong></label>
-            <select id="poverty-line-select">
-                <option value="Poorest 50%">Poorest 50%</option>
-                <option value="Middle 40%">Middle 40%</option>
-                <option value="Next 9%">Next 9%</option>
-                <option value="Richest 1%">Richest 1%</option>
-            </select>
+        <div class="controls" style="text-align:center; margin-top:1em; display: flex; flex-direction: column; align-items: center; gap: 1em;">
+            <div>
+                <label for="year-slider"><strong>Year:</strong></label>
+                <input type="range" id="year-slider" min="2000" max="2023" value="2023" step="1">
+                <span id="year-value">2023</span>
+            </div>
+            <div>
+                <label for="poverty-line-select"><strong>Select Poverty Line:</strong></label>
+                <select id="poverty-line-select">
+                    <option value="Poorest 50%">Poorest 50%</option>
+                    <option value="Middle 40%">Middle 40%</option>
+                    <option value="Next 9%">Next 9%</option>
+                    <option value="Richest 1%">Richest 1%</option>
+                </select>
+            </div>
         </div>
         <div class="dashboard">
             <div id="poverty-chart" class="viz-container">

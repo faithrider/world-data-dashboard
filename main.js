@@ -1,8 +1,9 @@
 // main.js
 // Load and parse the combined data, then call visualization functions
 
+
 let globalData = null;
-d3.csv("combined_latest.csv").then(data => {
+d3.csv("combined_all_years.csv").then(data => {
     // Convert numeric columns
     data.forEach(d => {
         d["Richest 1%"] = +d["Richest 1%"];
@@ -10,30 +11,49 @@ d3.csv("combined_latest.csv").then(data => {
         d["Middle 40%"] = +d["Middle 40%"];
         d["Poorest 50%"] = +d["Poorest 50%"];
         d["Life expectancy"] = +d["Life expectancy"];
+        d["Year"] = +d["Year"];
     });
     globalData = data;
+
+    // Get all years in the data
+    const years = Array.from(new Set(data.map(d => d.Year))).sort((a, b) => a - b);
+    const yearSlider = document.getElementById('year-slider');
+    yearSlider.min = years[0];
+    yearSlider.max = years[years.length - 1];
+    yearSlider.value = years[years.length - 1];
+    document.getElementById('year-value').textContent = yearSlider.value;
+
+    let selectedYear = +yearSlider.value;
     let selectedPovertyLine = document.getElementById('poverty-line-select').value;
     let mapMetric = document.getElementById('map-metric-select').value;
 
-    // Draw all charts
-    drawAll(data, selectedPovertyLine, mapMetric);
+    // Draw all charts for the selected year
+    drawAll(data, selectedPovertyLine, mapMetric, selectedYear);
 
+    // Listen for slider changes
+    yearSlider.addEventListener('input', function() {
+        selectedYear = +this.value;
+        document.getElementById('year-value').textContent = this.value;
+        drawAll(data, selectedPovertyLine, mapMetric, selectedYear);
+    });
     // Listen for dropdown changes
     document.getElementById('poverty-line-select').addEventListener('change', function() {
         selectedPovertyLine = this.value;
-        drawAll(data, selectedPovertyLine, document.getElementById('map-metric-select').value);
+        drawAll(data, selectedPovertyLine, mapMetric, selectedYear);
     });
     document.getElementById('map-metric-select').addEventListener('change', function() {
         mapMetric = this.value;
-        drawAll(data, selectedPovertyLine, mapMetric);
+        drawAll(data, selectedPovertyLine, mapMetric, selectedYear);
     });
 });
 
-function drawAll(data, povertyLine, mapMetric) {
-    drawPovertyChart(data, povertyLine);
-    drawLifeChart(data);
-    drawScatterplot(data, povertyLine);
-    drawChoroplethMap(data, povertyLine, mapMetric);
+function drawAll(data, povertyLine, mapMetric, year) {
+    // Filter data for the selected year
+    const yearData = data.filter(d => d.Year === year);
+    drawPovertyChart(yearData, povertyLine);
+    drawLifeChart(yearData);
+    drawScatterplot(yearData, povertyLine);
+    drawChoroplethMap(yearData, povertyLine, mapMetric);
 }
 
 // Draws a choropleth map of the selected poverty line or life expectancy
