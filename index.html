@@ -6,10 +6,11 @@
     <title>World Data Dashboard: Poverty & Life Expectancy</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Kosugi+Maru&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>World Data Dashboard: Poverty & Life Expectancy</h1>
+        <h1>World Data Dashboard: Income Distribution & Life Expectancy</h1>
         <p>By Faith Rider</p>
         <p>Data source: <a href="https://ourworldindata.org/" target="_blank">Our World in Data</a></p>
         <p>Specfiic datasets: <a href="https://ourworldindata.org/grapher/income-share-distribution-before-tax-wid" target="_blank">Income Distribution</a> and <a href="https://ourworldindata.org/grapher/life-expectancy" target="_blank">Life Expectancy</a></p>
@@ -22,7 +23,7 @@
                 <span id="year-value">2023</span>
             </div>
             <div>
-                <label for="poverty-line-select"><strong>Select Poverty Line:</strong></label>
+                <label for="poverty-line-select"><strong>Select Income Line:</strong></label>
                 <select id="poverty-line-select">
                     <option value="Poorest 50%">Poorest 50%</option>
                     <option value="Middle 40%">Middle 40%</option>
@@ -33,15 +34,15 @@
         </div>
         <div class="dashboard">
             <div id="poverty-chart" class="viz-container">
-                <h2>Poverty Distribution (2023)</h2>
+                <h2>Income Distribution</h2>
                 <svg class="main-chart"></svg>
             </div>
             <div id="life-chart" class="viz-container">
-                <h2>Life Expectancy (2023)</h2>
+                <h2>Life Expectancy</h2>
                 <svg class="main-chart"></svg>
             </div>
             <div id="scatterplot" class="viz-container">
-                <h2>Poverty vs. Life Expectancy</h2>
+                <h2>Income vs. Life Expectancy</h2>
                 <svg class="main-chart"></svg>
             </div>
             <div id="map" class="viz-container">
@@ -49,7 +50,7 @@
                 <div style="text-align:center; margin-bottom: 1em;">
                     <label for="map-metric-select"><strong>Map Metric:</strong></label>
                     <select id="map-metric-select">
-                        <option value="poverty">Selected Poverty Line</option>
+                        <option value="poverty">Selected Income Line</option>
                         <option value="life">Life Expectancy</option>
                     </select>
                 </div>
