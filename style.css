@@ -1,11 +1,27 @@
+/* Make all links powder orange for visibility */
+a, a:visited {
+    color: #FFBC7A; !important;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+a:hover, a:active {
+    color: #FF9900 !important;
+}
+
+header {
+    background: #FF9900;
+    color: white;
+    padding: 1em 2em;
+    text-align: center;
+}
 body {
     font-family: Kosugi Maru, sans-serif;
-    background: #f8f9fa;
+    background: #ffeee4;
     margin: 0;
     padding: 0;
 }
 header {
-    background: #4682B4;
+    background: #e35514;
     color: white;
     padding: 1em 2em;
     text-align: center;

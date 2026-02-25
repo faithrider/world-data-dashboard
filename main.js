@@ -211,7 +211,7 @@ function drawPovertyChart(data, povertyLine) {
         .attr('y', d => y(d.length))
         .attr('width', d => x(d.x1) - x(d.x0) - 1)
         .attr('height', d => y(0) - y(d.length))
-        .attr('fill', '#4682B4')
+        .attr('fill', '#FF9900')
         .on('mouseover', function(event, d) {
             tooltip.style('display', 'block')
                 .html(`<strong>${d.length} countries</strong><br>${povertyLine}: ${d.x0.toFixed(2)}% - ${d.x1.toFixed(2)}%`)
@@ -306,7 +306,7 @@ function drawLifeChart(data) {
         .attr('y', d => y(d.length))
         .attr('width', d => x(d.x1) - x(d.x0) - 1)
         .attr('height', d => y(0) - y(d.length))
-        .attr('fill', '#6baed6')
+        .attr('fill', '#FFBC7A')
         .on('mouseover', function(event, d) {
             tooltip.style('display', 'block')
                 .html(`<strong>${d.length} countries</strong><br>Life Expectancy: ${d.x0.toFixed(2)} - ${d.x1.toFixed(2)}`)
