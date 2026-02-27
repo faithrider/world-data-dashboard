@@ -6,6 +6,10 @@ Built by Faith Rider | [Demo Video](https://mailuc-my.sharepoint.com/:v:/g/perso
 ## Project Overview
 World Income & Life Expectancy Visualizer is an interactive web app designed to help users explore how income and life expectancy vary around the world. The application combines multiple datasets and geospatial data to provide a clear, engaging view of global development patterns over time.
 
+Data Source: [Source Code](https://ourworldindata.org/)
+
+Specific Datasets: [Income Distribution](https://ourworldindata.org/grapher/income-share-distribution-before-tax-wid) and [Life Expectancy](https://ourworldindata.org/grapher/life-expectancy)
+
 ### Key Features
 - Interactive World Map: Visualize country-level data on income and life expectancy using color-coded choropleth maps
 - Year Selection: Explore changes over time with a dynamic year slider
