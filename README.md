@@ -1,7 +1,7 @@
 # World Income & Life Expectancy Visualizer
 A data visualization web application for exploring global income distribution and life expectancy trends across countries and years.
 
-Built by Faith Rider | [Demo Video](https://duckduckgo.com) | [Live Site](https://world-data-dashboard-delta.vercel.app/) | [Source Code](https://github.com/faithrider/UI-project-1)
+Built by Faith Rider | [Demo Video](https://mailuc-my.sharepoint.com/:v:/g/personal/riderfm_mail_uc_edu/IQBcWNh-abK7RKwIey_Kl6MzAR4RSxBUmJtX0wX_T0UCZ60?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=13ofbX) | [Live Site](https://world-data-dashboard-delta.vercel.app/) | [Source Code](https://github.com/faithrider/UI-project-1)
 
 ## Project Overview
 World Income & Life Expectancy Visualizer is an interactive web app designed to help users explore how income and life expectancy vary around the world. The application combines multiple datasets and geospatial data to provide a clear, engaging view of global development patterns over time.
@@ -32,10 +32,17 @@ The project began with a focus on understanding global development indicators an
 - Interactive world map as the main view
 - Sidebar or modal for country details and data breakdowns
 
+![Main header](https://github.com/faithrider/world-data-dashboard/blob/main/screenshots/main.png)
+
 ### Map & Data Visualization
 - Choropleth map using D3.js for color scaling
 - Tooltips with country name, income, and life expectancy
 - Optional charts for income share distribution
+
+![Basic data histograms](https://github.com/faithrider/world-data-dashboard/blob/main/screenshots/histograms.png)
+![Scatterplot](https://github.com/faithrider/world-data-dashboard/blob/main/screenshots/scatterplot.png)
+![Choropleth map showing income distributions](https://github.com/faithrider/world-data-dashboard/blob/main/screenshots/choropleth-income.png)
+![Choropleth map showing life expectancy distributions](https://github.com/faithrider/world-data-dashboard/blob/main/screenshots/choropleth-life.png)
 
 ### Technical Implementation
 Technology Stack
